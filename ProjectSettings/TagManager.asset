@@ -21,6 +21,10 @@ TagManager:
   - Enemy
   - MagicBall
   - AttackSphere
+  - Warning
+  - Caudron
+  - cauldron
+  - Cauldron
   layers:
   - Default
   - TransparentFX
