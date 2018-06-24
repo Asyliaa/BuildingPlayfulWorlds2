@@ -1,0 +1,230 @@
+fileFormatVersion: 2
+guid: f12b3a08cc51d2b4b8c1c626d480520d
+timeCreated: 1529861823
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: bezem1
+    100002: boek
+    100004: boek1
+    100006: boek10
+    100008: boek11
+    100010: boek3
+    100012: boek4
+    100014: boek5
+    100016: boek6
+    100018: boek7
+    100020: boek8
+    100022: boek9
+    100024: crystal
+    100026: ketel
+    100028: low_floor
+    100030: lowkast1
+    100032: muur
+    100034: muur1
+    100036: muur2
+    100038: muur3
+    100040: plank
+    100042: plank1
+    100044: pointLight1
+    100046: pSphere5
+    100048: schilderij1
+    100050: schilderij2
+    100052: tafel
+    100054: //RootNode
+    400000: bezem1
+    400002: boek
+    400004: boek1
+    400006: boek10
+    400008: boek11
+    400010: boek3
+    400012: boek4
+    400014: boek5
+    400016: boek6
+    400018: boek7
+    400020: boek8
+    400022: boek9
+    400024: crystal
+    400026: ketel
+    400028: low_floor
+    400030: lowkast1
+    400032: muur
+    400034: muur1
+    400036: muur2
+    400038: muur3
+    400040: plank
+    400042: plank1
+    400044: pointLight1
+    400046: pSphere5
+    400048: schilderij1
+    400050: schilderij2
+    400052: tafel
+    400054: //RootNode
+    2100000: planken_tafel_vloer_schilderijen
+    2100002: ketel_v3
+    2100004: crystal_books
+    2100006: lambert11
+    2100008: lambert1
+    2100010: ProstMaureen_Maya_Eindopdracht_bezems_bordje
+    2100012: lambert15
+    2300000: bezem1
+    2300002: boek
+    2300004: boek1
+    2300006: boek10
+    2300008: boek11
+    2300010: boek3
+    2300012: boek4
+    2300014: boek5
+    2300016: boek6
+    2300018: boek7
+    2300020: boek8
+    2300022: boek9
+    2300024: crystal
+    2300026: ketel
+    2300028: low_floor
+    2300030: lowkast1
+    2300032: muur
+    2300034: muur1
+    2300036: muur2
+    2300038: muur3
+    2300040: plank
+    2300042: plank1
+    2300044: pSphere5
+    2300046: schilderij1
+    2300048: schilderij2
+    2300050: tafel
+    3300000: bezem1
+    3300002: boek
+    3300004: boek1
+    3300006: boek10
+    3300008: boek11
+    3300010: boek3
+    3300012: boek4
+    3300014: boek5
+    3300016: boek6
+    3300018: boek7
+    3300020: boek8
+    3300022: boek9
+    3300024: crystal
+    3300026: ketel
+    3300028: low_floor
+    3300030: lowkast1
+    3300032: muur
+    3300034: muur1
+    3300036: muur2
+    3300038: muur3
+    3300040: plank
+    3300042: plank1
+    3300044: pSphere5
+    3300046: schilderij1
+    3300048: schilderij2
+    3300050: tafel
+    4300000: plank
+    4300002: ketel
+    4300004: boek
+    4300006: low_floor
+    4300008: pSphere5
+    4300010: crystal
+    4300012: bezem1
+    4300014: muur3
+    4300016: boek1
+    4300018: boek3
+    4300020: boek4
+    4300022: boek5
+    4300024: boek6
+    4300026: boek7
+    4300028: boek8
+    4300030: boek9
+    4300032: boek10
+    4300034: boek11
+    4300036: schilderij2
+    4300038: plank1
+    4300040: schilderij1
+    4300042: muur
+    4300044: tafel
+    4300046: lowkast1
+    4300048: muur1
+    4300050: muur2
+    9500000: //RootNode
+    10800000: pointLight1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

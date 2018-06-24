@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 //de onderdelen over de first person controller komen van het script uit de les. Ik heb in dit script zelf er nog veel bijgeschreven,
@@ -44,9 +45,13 @@ public class Controller : MonoBehaviour
     public bool plantBool;
     public bool groundBool;
     public bool caudronBool;
+    public bool lastSceneBool;
     public GameObject enemy;
     private int damage = 10; 
     public Text healthText;
+    public AudioClip hurtClip;
+    public AudioClip collectClip;
+    public AudioClip attackClip;
 
 
     //andere script van de timer importeren zodat ik die kan gebruiken om de eindscore weer te geven
@@ -86,7 +91,8 @@ public class Controller : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    enemy.GetComponent<EnemyScript>().enemyHealth -= damage;
+                AudioSource.PlayClipAtPoint(attackClip, transform.position);
+                enemy.GetComponent<EnemyScript>().enemyHealth -= damage;
                     enemyText.text = "Enemy health =" + enemy.GetComponent<EnemyScript>().enemyHealth.ToString();
                 gieterText.text = "Enemy took 10 damage!";
                     print("It workds");
@@ -100,6 +106,7 @@ public class Controller : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F))
             {
+                AudioSource.PlayClipAtPoint(collectClip, transform.position);
                 collectedText.text = "Collected: 2 Seeds";
                 neededText.text = "Needed: 1 flower, 1 crystal";
                 gieterText.text = "Obtained 2 seeds";
@@ -134,6 +141,14 @@ public class Controller : MonoBehaviour
                 //op het eind timer laten zien
 
                 scoreText.text = "Your score is: " + timerScript.counterText.text;
+            }
+        }
+
+        if (lastSceneBool == true)
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
 
@@ -197,6 +212,7 @@ public class Controller : MonoBehaviour
         //Room 1 
         if (other.gameObject.CompareTag("Pick Up Gieter"))
         {
+            AudioSource.PlayClipAtPoint(collectClip, transform.position);
             other.gameObject.SetActive(false);
             count = count + 1;
             objectCount = objectCount + 1;
@@ -230,8 +246,8 @@ public class Controller : MonoBehaviour
 
         if (other.gameObject.CompareTag("Schep"))
         {
-           
-                other.gameObject.SetActive(false);
+            AudioSource.PlayClipAtPoint(collectClip, transform.position);
+            other.gameObject.SetActive(false);
                 objectCount = objectCount + 1;
                 gieterText.text = "Obtained shovel";
 
@@ -258,6 +274,7 @@ public class Controller : MonoBehaviour
 
             if (triggerCount >= 1)
             {
+                AudioSource.PlayClipAtPoint(collectClip, transform.position);
                 tempText.text = "";
                 collectedText.text = "Collected: 1 Seed, 1 Flower";
                 neededText.text = "Needed: 1 crystal";
@@ -281,6 +298,7 @@ public class Controller : MonoBehaviour
             tempText.text = "I'm hungry. In return for green food I will give you this crystal I found.";
             if (objectCount >= 5)
             {
+                AudioSource.PlayClipAtPoint(collectClip, transform.position);
                 tempText.text = "Thank you! Have my crystal";
                 collectedText.text = "Collected: 1 Seed, 1 Flower, 1 Crystal.";
                 neededText.text = "";
@@ -292,7 +310,7 @@ public class Controller : MonoBehaviour
         if (other.gameObject.CompareTag("Green Food"))
         {
             other.gameObject.SetActive(false);
-
+            AudioSource.PlayClipAtPoint(collectClip, transform.position);
             gieterText.text = "Obtained: Green Food";
             objectCount = objectCount + 1;
 
@@ -303,6 +321,7 @@ public class Controller : MonoBehaviour
 
         if (other.gameObject.CompareTag("Key"))
         {
+            AudioSource.PlayClipAtPoint(collectClip, transform.position);
             other.gameObject.SetActive(false);
             objectCount = objectCount + 1;
             gieterText.text = "Obtained: Key";
@@ -336,7 +355,7 @@ public class Controller : MonoBehaviour
         //Zorgt ervoor dat de aanvallen van de enemy damage doen en zorgt voor een message als de player dood gaat. 
         if (other.gameObject.CompareTag("MagicBall"))
         {
-
+            AudioSource.PlayClipAtPoint(hurtClip, transform.position);
             playerHealth = playerHealth - 10;
             healthText.text = "Health = " + playerHealth.ToString();
 
@@ -348,13 +367,19 @@ public class Controller : MonoBehaviour
 
         if (other.gameObject.CompareTag("Cauldron"))
         {
-            if (objectCount >= 6)
+         
             {
                 caudronBool = true;
                 tempText.text = "Press F to put in all the ingredients!";
 
             }
 
+        }
+
+        if (other.gameObject.CompareTag("House"))
+        {
+            lastSceneBool = true;
+            tempText.text = "Press F to go in";
         }
 
     }
