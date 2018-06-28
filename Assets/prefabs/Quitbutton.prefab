@@ -65,9 +65,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 0.25, b: 0.25, a: 0.497}
-    m_HighlightedColor: {r: 1, g: 0.29411763, b: 0.29411763, a: 0.753}
-    m_PressedColor: {r: 1, g: 0, b: 0, a: 0.522}
+    m_NormalColor: {r: 0.7941176, g: 0.110942915, b: 0.6904634, a: 0.791}
+    m_HighlightedColor: {r: 0.34195486, g: 0.18112023, b: 0.9852941, a: 0.753}
+    m_PressedColor: {r: 0.07586192, g: 0, b: 1, a: 0.522}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_fontColorGradient:
     topLeft: {r: 1, g: 0.33823532, b: 0.8448276, a: 1}
@@ -220,7 +220,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}

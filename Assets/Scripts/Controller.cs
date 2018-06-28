@@ -42,9 +42,8 @@ public class Controller : MonoBehaviour
 
     //ints
     public int objectCount;
-    public int schepCount;
     public int triggerCount;
-    private int damage = 10;
+    private int damage = 5;
 
     //overig
     public GameObject enemy;
@@ -56,21 +55,24 @@ public class Controller : MonoBehaviour
 
     void Start()
     {
+
+        //Set Cursor to not be visible
+        Cursor.visible = false;
+
+
         //texten leeg zetten of invoeren wat er moet staan
         rigidBody = GetComponent<Rigidbody>();
         objectCount = 0;
-        schepCount = 0;
         playerHealth = 100;
         triggerCount = 0;
-        winText.text = "";
         infoText.text = "";
         controlText.text = "";
         gieterText.text = "";
-        collectedText.text = "Collected:";
-        neededText.text = "Needed: 1 seed, 1 flower, 1 crystal";
+        neededText.text = "Needed: seed flower crystal";
+        collectedText.text = "";
         healthText.text = "Health = 100";
         tempText.text = "";
-        enemyText.text = "Enemy Health";
+        enemyText.text = "";
 
 
 
@@ -102,6 +104,10 @@ public class Controller : MonoBehaviour
                 enemyText.text = "Enemy health =" + enemy.GetComponent<EnemyScript>().enemyHealth.ToString();
                 gieterText.text = "Enemy took 10 damage!";
                 print("It works");
+                if (enemy.GetComponent<EnemyScript>().enemyHealth <= 0)
+                {
+                    gieterText.text = "Enemy died!";
+                }
             }
 
         }
@@ -113,8 +119,8 @@ public class Controller : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 AudioSource.PlayClipAtPoint(collectClip, transform.position);
-                collectedText.text = "Collected: 2 Seeds";
-                neededText.text = "Needed: 1 flower, 1 crystal";
+                collectedText.text = "Collected: seed";
+                neededText.text = "Needed: flower crystal";
                 gieterText.text = "Obtained 2 seeds";
                 print("it works!");
                 objectCount = objectCount + 1;
@@ -127,9 +133,10 @@ public class Controller : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
+                AudioSource.PlayClipAtPoint(collectClip, transform.position);
                 gieterText.text = "Planted 1 seed";
-                collectedText.text = "Collected: 1 Seed";
-                neededText.text = "Needed: 1 flower, 1 crystal";
+                collectedText.text = "Collected: seed";
+                neededText.text = "Needed: flower crystal";
                 print("it wooorks!");
                 objectCount = objectCount + 1;
             }
@@ -257,8 +264,8 @@ public class Controller : MonoBehaviour
             {
                 AudioSource.PlayClipAtPoint(collectClip, transform.position);
                 tempText.text = "";
-                collectedText.text = "Collected: 1 Seed, 1 Flower";
-                neededText.text = "Needed: 1 crystal";
+                collectedText.text = "Collected: seed flower";
+                neededText.text = "Needed: crystal";
                 gieterText.text = "Obtained 1 flower";
                 other.gameObject.SetActive(false);
             }
@@ -268,6 +275,7 @@ public class Controller : MonoBehaviour
         {
             if (objectCount >= 4)
             {
+                AudioSource.PlayClipAtPoint(collectClip, transform.position);
                 gieterText.text = "Your plant has fully grown! Return to collect it.";
                 triggerCount = triggerCount + 1;
                 other.gameObject.SetActive(false);
@@ -285,7 +293,7 @@ public class Controller : MonoBehaviour
             {
                 AudioSource.PlayClipAtPoint(collectClip, transform.position);
                 tempText.text = "Thank you! Have my crystal";
-                collectedText.text = "Collected: 1 Seed, 1 Flower, 1 Crystal.";
+                collectedText.text = "Collected: seed flower crystal";
                 neededText.text = "";
                 gieterText.text = "You collected all the ingredients! Find the cauldron and put them in there to finish the potion.";
 
@@ -333,6 +341,7 @@ public class Controller : MonoBehaviour
         {
             attackBool = true;
             enemy = other.gameObject;
+            enemyText.text = "Enemy health =" + enemy.GetComponent<EnemyScript>().enemyHealth.ToString();
         }
 
         //Zorgt ervoor dat de aanvallen van de enemy damage doen en zorgt voor een message als de player dood gaat. 
@@ -420,8 +429,8 @@ public class Controller : MonoBehaviour
         if (objectCount < 3)
         {
             //de informatie text die je krijgt als je de info trigger inloopt.
-            infoText.text = "Hi there, you are a witch but you're losing you're not feeling well. Make a potion to feel better! Collect the following things: ";
-            controlText.text = "Use wasd to move and your mouse to look around. You can jump by pressing the spacebar and double jump by pressing it twice. ";
+            infoText.text = "Hi there, you are a witch but you're not feeling well. You have to make a potion to get better, but you'll need to collect a seed, a flower and a crystal to make it. ";
+            controlText.text = "Use wasd to move and your mouse to look around. If other keys have to be pressed, it will show up on screen.";
         }
 
         if (objectCount > 3)

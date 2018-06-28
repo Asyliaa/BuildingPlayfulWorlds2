@@ -20,11 +20,6 @@ public class DoorScript : MonoBehaviour {
         anim.SetTrigger("OpenDoor");
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        //als je uit de trigger komt, gaat de deur dicht.
-        anim.enabled = true;
-    }
 
     void pauseAnimationEvent()
     {
